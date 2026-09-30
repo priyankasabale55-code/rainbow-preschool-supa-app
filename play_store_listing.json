@@ -1,0 +1,74 @@
+{
+  "listing": {
+    "title": "Rainbow Preschool Supa",
+    "title_length": 22,
+    "short_description": "Preschool tasks, homework, letter tracing quizzes, and monthly student reports.",
+    "short_description_length": 79,
+    "full_description": "Rainbow Preschool Supa is an early learning and classroom communication app for Nursery, LKG, and UKG students, parents, and teachers. It combines a class-wise daily task and homework board with interactive 4-line finger tracing, picture quizzes, and monthly student progress reports stored locally on your device.\n\nKey Features:\n\n• Class-Wise Portals for Nursery, LKG, and UKG: Switch between Nursery (2.5–3.5 yrs), LKG (3.5–4.5 yrs), and UKG (4.5–5.5 yrs) or lock the view to a single assigned class.\n• Daily Tasks, Homework, and Instructions Board: Post, edit, pin, and filter daily classroom activities, homework assignments, due dates, and required materials checklists. Mark activities and homework as done with clear status badges.\n• Quick-Fill Classroom Templates & Search: Create new class updates using built-in Nursery, LKG, and UKG templates, filter by category or pending status, and search by keyword or subject tag.\n• Interactive 4-Line Finger Tracing Canvas: Practice pre-writing strokes, capital and small letters, numbers, and 3-letter CVC words on a guided 4-line preschool board with selectable crayon colors and progress tracking.\n• Picture Flashcards & Custom Photo Quizzes: Answer multiple-choice syllabus questions using built-in picture cards or attach custom quiz photos from your device gallery using the Android Photo Picker.\n• Monthly Student Activity Reports: Track solved tracing tasks, quiz accuracy, topic breakdowns, and star rewards for each student by month, and add new students to the class roster.\n• Role-Based Parent, Teacher, and Admin Modes: Log in with a class parent code to focus on a specific child's class and report, or use Teacher and Admin modes to manage entries, syllabus questions, and class passcodes.\n• Share Updates & Reports: Export formatted plain-text summaries of class tasks and monthly student reports to messaging or email apps via the Android share sheet, and contact the school directly via phone dialer or email links.\n• Responsive Phone, Tablet, and Widescreen Layouts: Adapts automatically to compact phone screens and two-pane tablet or desktop layouts.\n\nAccess & In-App Purchases:\nEnrolled parents can unlock their child's class using the school-provided parent access code configured in the app. Other users can unlock individual class passes (Nursery, LKG, or UKG) or the All-Classes Bundle via one-time in-app purchases powered by Google Play Billing. All diary entries, student rosters, custom quiz photos, and activity logs are stored locally on the device.\n\nFamilies & Privacy Policy Disclosure:\nThis app includes early learning activities suitable for preschool children alongside parent and teacher tools. In accordance with Google Play Families Policies, developers publishing this app in Play Console must provide a valid, accessible Privacy Policy URL in the Store Listing and complete the Target Audience and Content declaration.",
+    "full_description_length": 2923
+  },
+  "capability_inventory": [
+    {
+      "capability": "App display name ('Rainbow Preschool Supa') and Google Play Billing permission declaration",
+      "evidence": "app/src/main/res/values/strings.xml (app_name), app/src/main/AndroidManifest.xml (com.android.vending.BILLING)"
+    },
+    {
+      "capability": "Class-wise preschool portal for Nursery (2.5–3.5 Yrs), LKG (3.5–4.5 Yrs), and UKG (4.5–5.5 Yrs)",
+      "evidence": "app/src/main/java/com/example/data/PreschoolModels.kt (PreschoolClass), app/src/main/java/com/example/ui/PreschoolVisuals.kt (ClassAccessSelectorRow)"
+    },
+    {
+      "capability": "Daily Tasks, Homework, and Instructions board with create, edit, delete, pin, and completion status tracking",
+      "evidence": "app/src/main/java/com/example/data/PreschoolModels.kt (PreschoolEntry, EntryCategory), app/src/main/java/com/example/ui/EntryCardsAndModals.kt (PreschoolEntryCard, AddOrEditEntryBottomSheet, EntryDetailBottomSheet), app/src/main/java/com/example/ui/PreschoolViewModel.kt (saveEntry, toggleCompleted, togglePinned, deleteEntry)"
+    },
+    {
+      "capability": "Quick-fill class templates, category filters, pending/pinned filter, and keyword search",
+      "evidence": "app/src/main/java/com/example/data/PreschoolModels.kt (PreschoolSeedData.getTemplatesForClass), app/src/main/java/com/example/ui/RainbowPreschoolApp.kt (BoardCategoryFilterAndSearch), app/src/main/java/com/example/ui/PreschoolViewModel.kt (selectCategoryFilter, updateSearchQuery, togglePendingOrPinnedOnly)"
+    },
+    {
+      "capability": "Interactive 4-line preschool finger tracing canvas with crayon color selector and progress indicator",
+      "evidence": "app/src/main/java/com/example/ui/SyllabusTracingSection.kt (InteractiveTracingAndQuizBottomSheet, TracedStroke)"
+    },
+    {
+      "capability": "Multiple-choice syllabus quizzes with built-in picture flashcards and custom photo attachment via Android Photo Picker",
+      "evidence": "app/src/main/java/com/example/data/SyllabusAndReportModels.kt (SyllabusQuestion, QuestionKind, PictureQuizPreset), app/src/main/java/com/example/ui/SyllabusTracingSection.kt (AddSyllabusQuestionBottomSheet, ActivityResultContracts.PickVisualMedia)"
+    },
+    {
+      "capability": "Monthly student activity reports with solved counts, accuracy percentage, star rewards, topic breakdown, and student roster addition",
+      "evidence": "app/src/main/java/com/example/ui/MonthlyReportSection.kt (MonthlyReportOverviewCard, StudentMonthlyReportCard, StudentDetailedMonthlyReportSheet, AddStudentDialog), app/src/main/java/com/example/ui/PreschoolViewModel.kt (StudentMonthlySummary, recordQuestionSolvedByStudent, addStudent)"
+    },
+    {
+      "capability": "Role-based access control for Parent-Child login, Class Teacher access, and School Admin passcode configuration",
+      "evidence": "app/src/main/java/com/example/data/SyllabusAndReportModels.kt (AccessControlConfig, AccessRoleTier), app/src/main/java/com/example/ui/ParentAccessAndPlayStoreSheet.kt (ClassAccessAndPlayStoreBottomSheet, ParentChildActiveSessionBanner), app/src/main/java/com/example/ui/PreschoolViewModel.kt (loginParentForChildAndClass, loginTeacherForClass, loginSchoolAdmin, saveAdminPasscodes)"
+    },
+    {
+      "capability": "Google Play Billing integration for one-time class passes (Nursery, LKG, UKG) and All-Classes Bundle with purchase restoration",
+      "evidence": "app/src/main/java/com/example/data/PlayBillingManager.kt (PlayBillingManager, catalogProducts, launchPurchaseFlow, restorePurchases)"
+    },
+    {
+      "capability": "Local on-device SQLite persistence via Room for entries, syllabus questions, students, activity logs, and access settings",
+      "evidence": "app/src/main/java/com/example/data/PreschoolDatabase.kt (PreschoolDatabase), app/src/main/java/com/example/data/PreschoolDao.kt (PreschoolDao), app/src/main/java/com/example/data/PreschoolRepository.kt (PreschoolRepository)"
+    },
+    {
+      "capability": "Adaptive layout modes (Phone, Tablet 2-pane split view, Desktop wide view) and Android share sheet export for class tasks and monthly reports",
+      "evidence": "app/src/main/java/com/example/ui/RainbowPreschoolApp.kt (RainbowPreschoolApp), app/src/main/java/com/example/ui/MultiDevicePortalComponents.kt (DeviceLayoutMode, MultiDeviceAndShareBottomSheet, CrossDeviceShareHelper)"
+    },
+    {
+      "capability": "Direct school phone dialer and email intents from the header banner",
+      "evidence": "app/src/main/java/com/example/ui/PreschoolVisuals.kt (PreschoolHeroBanner, Intent.ACTION_DIAL, Intent.ACTION_SENDTO)"
+    }
+  ],
+  "disclosures_applied": [
+    {
+      "category": "Child-directed or mixed-audience app (Google Play Families Policies)",
+      "disclosure_text": "This app includes early learning activities suitable for preschool children alongside parent and teacher tools. In accordance with Google Play Families Policies, developers publishing this app in Play Console must provide a valid, accessible Privacy Policy URL in the Store Listing and complete the Target Audience and Content declaration."
+    },
+    {
+      "category": "In-app purchases via Google Play Billing & local data storage",
+      "disclosure_text": "Enrolled parents can unlock their child's class using the school-provided parent access code configured in the app. Other users can unlock individual class passes (Nursery, LKG, or UKG) or the All-Classes Bundle via one-time in-app purchases powered by Google Play Billing. All diary entries, student rosters, custom quiz photos, and activity logs are stored locally on the device."
+    }
+  ],
+  "omitted_for_lack_of_evidence": [
+    "Real-time cloud synchronization or cross-device automatic backup: The app persists all entries, syllabus questions, student rosters, and activity logs locally in an on-device Room database (app/src/main/java/com/example/data/PreschoolDatabase.kt) and shares text summaries manually via Android's Intent.ACTION_SEND share sheet rather than a cloud backend.",
+    "Remote server authentication: Parent, Teacher, and Admin passcodes are verified locally against AccessControlConfig stored in Room on the device rather than a remote authentication API."
+  ]
+}

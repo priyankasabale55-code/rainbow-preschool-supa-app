@@ -1,0 +1,6 @@
+{
+  "name": "Rainbow Preschool Supa",
+  "description": "Class-wise preschool portal for Nursery, LKG, and UKG to manage daily tasks, homework, and parent-teacher instructions.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

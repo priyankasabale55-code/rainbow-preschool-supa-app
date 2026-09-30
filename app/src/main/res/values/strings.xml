@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Rainbow Preschool Supa</string>
+    <string name="school_subtitle">Supa Campus • Early Learning Portal</string>
+    <string name="class_nursery">Nursery</string>
+    <string name="class_lkg">LKG</string>
+    <string name="class_ukg">UKG</string>
+    <string name="type_daily_task">Daily Task</string>
+    <string name="type_homework">Homework</string>
+    <string name="type_instruction">Instruction</string>
+    <string name="tab_all">All Updates</string>
+    <string name="tab_daily_tasks">Daily Tasks</string>
+    <string name="tab_homework">Homework</string>
+    <string name="tab_instructions">Instructions</string>
+    <string name="add_new_entry">Add Entry</string>
+    <string name="search_placeholder">Search tasks, homework, or notes…</string>
+    <string name="empty_state_title">No entries here yet!</string>
+    <string name="empty_state_subtitle">Tap the + button below to add a new Daily Task, Homework, or Instruction for this class.</string>
+    <string name="teacher_mode">Teacher Mode</string>
+    <string name="parent_mode">Parent View</string>
+    <string name="pin_important">Important Notice</string>
+    <string name="mark_completed">Mark Done</string>
+    <string name="delete_entry">Delete Entry</string>
+    <string name="edit_entry">Edit Entry</string>
+</resources>
